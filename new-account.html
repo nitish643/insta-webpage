@@ -1,71 +1,77 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link href="F:\instalogo.png" type="instalogo/png" rel="icon">
-        <style>
-            
-            body{
-                background-color: rgb(10, 10, 10,0.5);
-            }
+<head>
+    <link href="D:\insta webpage\instalogo.png" type="image/png" rel="icon">
+    <style>
+        body {
+            background-color: rgba(10, 10, 10, 0.5);
+            font-family: Arial, sans-serif;
+        }
 
-            .a {
+        .a {
             border: 1px solid gray;
-            padding: 5px;
+            padding: 20px;
             width: 300px;
-            height: 50%;
             background-color: white;
             border-radius: 10px;
             margin-top: 100px;
         }
 
         .b {
-            font-family: Tektur;
+            font-family: Tektur, sans-serif;
             font-weight: 500;
             font-size: 32px;
-            margin: 30px;
+            margin-bottom: 20px;
         }
 
         input {
-            margin: 5px;
+            margin: 5px 0;
             width: 250px;
             height: 30px;
+            padding: 5px;
         }
+
         input[type="submit"] {
             background-color: rgb(108, 140, 245);
             color: white;
             border-radius: 8px;
-            border-style: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
-     .d{
-        display: flex;
-        flex-direction: row;
-        
-     }
 
-        .checkbox{
-            size:10;
-            margin-left: 3px;
-            margin-right: 0px;
+        .d {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top:5px;
         }
+        .checkbox {
+            width: 25px;
+            margin-left: 90px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
 
-     </style>
-    </head>
-    <body>
-        <center>
-            <div class="a">
-                <div class="b">Instargram</div>
-                <div class="c">
-                  <input
-                    type="text"
-                    placeholder="phone number,username or email"
-                    requried
-                  /><br />
-                  <input type="password" placeholder="password" required />
-                  <div class="d">
+<body>
+    <center>
+        <div class="a">
+            <div class="b">Instagram</div>
+
+            <form>
+                <input type="text" placeholder="Phone number, username or email" required><br>
+                <input type="password" placeholder="Password" required><br>
+
+                <div class="d">
                     <input type="checkbox" class="checkbox">
-                     <p class="p">save login info</p>
-                  </div>
-                    <input type="submit" value="Login" />
-        </center>
-    </body>
+                    <label>Save login info</label>
+                </div>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </center>
+</body>
 </html>

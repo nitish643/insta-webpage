@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - Sign Up</title>
+    <link rel="icon" type="image/png" href="instalogo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .signup-container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-family: 'Billabong', 'Brush Script MT', cursive;
+            font-size: 56px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #000;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #999;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 13px;
+            background-color: #fafafa;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #a8a8a8;
+            background-color: #f5f5f5;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: #4f5bd5;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #262626;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            text-transform: none;
+            color: #262626;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 12px;
+            background: linear-gradient(135deg, #4f5bd5 0%, #3d45a3 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #3d45a3 0%, #2d3272 100%);
+            opacity: 0.9;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #262626;
+        }
+
+        .login-link a {
+            color: #4f5bd5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .login-link a:hover {
+            color: #3d45a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">Instagram</div>
+        <p class="subtitle">Sign up to see photos and videos from your friends.</p>
+
+        <form action="instahomepage.html" method="get" onsubmit="return validateSignup()">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" minlength="6" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="save-info" name="save-info" checked>
+                <label for="save-info">Save login info</label>
+            </div>
+
+            <input type="submit" value="Sign Up">
+        </form>
+
+        <div class="login-link">
+            Have an account? <a href="instalogin.html">Log in</a>
+        </div>
+    </div>
+
+    <script>
+      function validateSignup() {
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+        var username = document.getElementById('username').value;
+        
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return false;
+        }
+        
+        localStorage.setItem('instagramUsername', username);
+        alert('Account created successfully!');
+        return true;
+      }
+    </script>
+</body>
+</html>

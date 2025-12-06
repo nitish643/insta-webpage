@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Messages - Select Chat</title>
+        <link rel="icon" type="image/png" href="instalogo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .empty-state {
+                text-align: center;
+                max-width: 400px;
+            }
+
+            .logo-container {
+                margin-bottom: 24px;
+            }
+
+            .logo-container img {
+                width: 120px;
+                height: 120px;
+                opacity: 0.3;
+                margin-bottom: 0;
+            }
+
+            .empty-state h2 {
+                font-size: 32px;
+                font-weight: 700;
+                color: #000;
+                margin-bottom: 12px;
+            }
+
+            .empty-state p {
+                font-size: 15px;
+                color: #999;
+                margin-bottom: 32px;
+                line-height: 1.4;
+            }
+
+            .send-button {
+                background: linear-gradient(135deg, #4f5bd5 0%, #3d45a3 100%);
+                color: white;
+                padding: 12px 40px;
+                border: none;
+                border-radius: 24px;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-family: inherit;
+            }
+
+            .send-button:hover {
+                background: linear-gradient(135deg, #3d45a3 0%, #2d3272 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(79, 91, 213, 0.3);
+            }
+
+            .send-button:active {
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="empty-state">
+            <div class="logo-container">
+                <img src="messageslogo.png" alt="Messages">
+            </div>
+            <h2>Your messages</h2>
+            <p>Send private messages to friends to keep your conversations in one place.</p>
+            <button class="send-button">Send a message</button>
+        </div>
+    </body>
+</html>
